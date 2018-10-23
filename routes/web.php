@@ -22,18 +22,15 @@ Route::get('pru',function(){
 	return view('prueba',$aDatos);
 });
 
-Route::get('inicio',function(){
-	return view('inicio');
-});
+Route::get('inicio','PruebaController@index');
 
-Route::get('createUsu',function(){
-	return view('usuario.createUsuario');
-});
+Route::get('createUsu','PruebaController@create');
 
-Route::get('editUsu',function(){
-	return view('usuario.editUsuario');
-});
+Route::get('editUsu','PruebaController@edit');
 
-Route::get('usu',function(){
-	return view('usuario.usuario');
-});
+Route::get('usu','PruebaController@show');
+
+Route::resource('usuario','UsuarioController');
+
+
+
