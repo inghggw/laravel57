@@ -13,7 +13,9 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return view('usuario.usuario');
+        /*$o = new PruebaController;
+        $d = $o->usuarios();*/
+        return view('usuario.usuario',PruebaController::usuarios());
     }
 
     /**

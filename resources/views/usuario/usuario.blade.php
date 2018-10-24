@@ -13,6 +13,13 @@
     </tr>
   </thead>
   <tbody>
+  	@foreach($usuarios as $row)
+  		<tr>
+  			<td>{{$row['id']}}</td>
+  			<td>{{$row['nombre']}}</td>
+  			<td>{{$row['correo']}}</td>
+  		</tr>
+  	@endforeach
   </tbody>
 </table>
 @endsection

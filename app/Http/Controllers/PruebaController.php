@@ -21,4 +21,12 @@ class PruebaController extends Controller{
 	public function show(){
 		return view('usuario.usuario');
 	}
+
+	static function usuarios(){
+		return ['usuarios'=>[
+					['id'=>1,'nombre'=>'Marcos Perez','correo'=>'mperez@gmail.com'],
+					['id'=>2,'nombre'=>'Alvaro Montero','correo'=>'amontero@gmail.com'],
+					['id'=>3,'nombre'=>'Danovis Banguero','correo'=>'dbanguero@gmail.com'],
+				]];
+	}
 }

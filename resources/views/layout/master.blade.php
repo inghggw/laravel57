@@ -24,13 +24,13 @@
 		    <a class="nav-link @yield('aInicio')" href="{{url('inicio')}}">Inicio</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link @yield('aCreateUsu')" href="{{url('createUsu')}}">Crear Usuario</a>
+		    <a class="nav-link @yield('aCreateUsu')" href="{{Route('usuario.create')}}">Crear Usuario</a>
 		  </li>
 		  <li class="nav-item">
 		    <a class="nav-link @yield('aEditUsu')" href="{{url('editUsu')}}">Editar Usuario</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link @yield('aUsu')" href="{{url('usu')}}">Listar Usuarios</a>
+		    <a class="nav-link @yield('aUsu')" href="{{Route('usuario.index')}}">Listar Usuarios</a>
 		  </li>
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0">
@@ -47,7 +47,7 @@
 	<div class="container-fluid">
 
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-8 pt-3">
 				@yield('contenido')
 			</div>
 			<div class="col-md-4 bg-info">				
