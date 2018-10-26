@@ -3,17 +3,18 @@
 @section('aEditUsu','active')
 
 @section('contenido')
+{{-- var_dump($u) --}}
 <h3 class="text-primary">Editar Usuario</h3>
 <form>
 	<div class="form-group">
 	    <label for="txtNombre">Nombre</label>
-	    <input type="text" class="form-control" id="txtNombre" placeholder="Digite el nombre">
+	    <input type="text" class="form-control" id="txtNombre" placeholder="Digite el nombre" value="{{$u['nombre']}}">
 	</div>
   	<div class="form-row">
   	
 	<div class="form-group col-md-6">
 	      <label for="txtCorreo">Correo electrónico</label>
-	      <input type="email" class="form-control" id="txtCorreo" placeholder="Ejm: nombre@midominio.com">
+	      <input type="email" class="form-control" id="txtCorreo" placeholder="Ejm: nombre@midominio.com" value="{{$u['correo']}}">
 	    </div>
 	    <div class="form-group col-md-6">
 	      <label for="txtContra">Contraseña</label>

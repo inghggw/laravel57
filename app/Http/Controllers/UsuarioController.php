@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UsuarioController extends Controller
 {
@@ -58,7 +59,17 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        return view('usuario.editUsuario');
+        $aDatos = PruebaController::usuarios(); 
+
+        $filtro = array_where($aDatos['usuarios'],function($val,$key) use ($id){
+            Log::debug($val);
+            Log::debug($val['id']);
+            Log::debug($key);
+            if($val['id']==$id){
+                return $val;
+            }
+        });
+        return view('usuario.editUsuario',['u'=>reset($filtro)]);
     }
 
     /**
