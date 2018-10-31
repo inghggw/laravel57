@@ -15,10 +15,12 @@
   </thead>
   <tbody>
   	@foreach($usuarios as $row)
-  		<tr>
+  		<tr id="fila{{$row['id']}}">
   			<td>
   				<a href="{{Route('usuario.edit',$row['id'])}}">
   				<img src="{{asset('svg/edit.svg')}}" class="h-25"></a>
+          <img src="{{asset('svg/delete.svg')}}" class="h-75 remove" 
+                onclick="deleteFila({{$row['id']}})">
   			</td>
   			<td>{{$row['id']}}</td>
   			<td>{{$row['nombre']}}</td>

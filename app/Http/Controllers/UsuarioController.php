@@ -48,7 +48,7 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        //
+        echo 'llegó al show caremonda';
     }
 
     /**
@@ -92,6 +92,6 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        echo $id;
     }
 }
