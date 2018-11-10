@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class UsuarioTableSeeder extends Seeder
 {
@@ -11,24 +10,24 @@ class UsuarioTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        //Ruta del archivo
+    {	//ruta del archivo
         $file = database_path('json/usuarios.json');
-        //Incluir archivo json
+        //incluir archivo json
         $json = file_get_contents($file);
-        //Recorrer el json
-        foreach (json_decode($json) as $row) {
-            //Crear cada fila del json en la BD
-            DB::table('usuario')->insert([
-                'primer_nombre'=>$row->primer_nombre,
-                'segundo_nombre'=>$row->segundo_nombre,
-                'primer_apellido'=>$row->primer_apellido,
-                'segundo_apellido'=>$row->segundo_apellido,
-                'correo'=>$row->correo,
-                'password'=>$row->password,
-                'fecha_nacimiento'=>$row->fecha_nacimiento,
-                'estado_id'=>$row->estado_id
-            ]);
+        //recorrer el json
+        foreach(json_decode($json) as $row){
+        	//crear cada fila del json en la BD
+        	DB::table('usuario')->insert([
+         	'primer_nombre' => $row->primer_nombre,
+         	'segundo_nombre' => $row->segundo_nombre,
+         	'primer_apellido'=>$row->primer_apellido,
+         	'segundo_apellido'=>$row->segundo_apellido,
+         	'correo'=>$row->correo,
+         	'password'=>$row->password,
+         	'fecha_nacimiento'=>$row->fecha_nacimiento,
+         	'estado_id'=>$row->estado_id
+        ]);
+
         }
-    }
+            }
 }

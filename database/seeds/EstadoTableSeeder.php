@@ -12,9 +12,9 @@ class EstadoTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('estado')->insert([
-            ['nombre' => 'Activo'],
-            ['nombre' => 'Inactivo'],
+         DB::table('estado')->insert([
+         	['nombre' => 'Activo'],
+    		['nombre' => 'Inactivo'],
         ]);
     }
 }
