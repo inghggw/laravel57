@@ -81,6 +81,11 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
+                <center>
+                    <a href="{{Route('usuario.index')}}">
+                        <button>Ir a Usuarios</button>
+                    </a>
+                </center>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>

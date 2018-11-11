@@ -32,5 +32,6 @@ Route::get('usu','PruebaController@show');
 
 Route::resource('usuario','UsuarioController');
 
+Auth::routes();
 
-
+Route::get('/home', 'HomeController@index')->name('home');
