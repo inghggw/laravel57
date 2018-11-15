@@ -1,6 +1,6 @@
 [
-{"item_id":"","item":"Administración","ruta":"","icono":"adn"},
-{"item_id":"","item":"Informes","ruta":"","icono":"book"},
+{"item_id":null,"item":"Administración","ruta":"","icono":"adn"},
+{"item_id":null,"item":"Informes","ruta":"","icono":"book"},
 {"item_id":"1","item":"Roles","ruta":"","icono":""},
 {"item_id":"1","item":"Usuarios","ruta":"","icono":""},
 {"item_id":"1","item":"Copias de Seguridad","ruta":"","icono":""},
@@ -25,5 +25,5 @@
 {"item_id":"7","item":"Contratación","ruta":"iContratación","icono":""},
 {"item_id":"8","item":"Auditoría","ruta":"iAuditoria","icono":""},
 {"item_id":"8","item":"HV Equipos","ruta":"iHVEquipos","icono":""},
-{"item_id":"9","item":"Archivos","ruta":"iArchivos","icono":""},
+{"item_id":"9","item":"Archivos","ruta":"iArchivos","icono":""}
 ]

@@ -22,5 +22,6 @@ class ItemRolTableSeeder extends Seeder
          	'item_id' => $row->item_id,
          	'rol_id' => $row->rol_id,
         ]);
+        }
     }
 }

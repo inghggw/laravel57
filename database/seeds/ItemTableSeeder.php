@@ -19,7 +19,11 @@ class ItemTableSeeder extends Seeder
         foreach(json_decode($json) as $row){
         	//crear cada fila del json en la BD
         	DB::table('item')->insert([
-         	'item' => $row->item
-        ]);
+         	'item_id' => $row->item_id,
+            'item' => $row->item,
+            'ruta' => $row->ruta,
+            'icono' => $row->icono,
+            ]);
+        }
     }
 }

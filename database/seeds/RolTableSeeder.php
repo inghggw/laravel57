@@ -12,9 +12,9 @@ class RolTableSeeder extends Seeder
     public function run()
     {
         DB::table('rol')->insert([
-         	['nombre' => 'aprendiz'],
-    		['nombre' => 'instructor'],
-    		['nombre' => 'cordinador'],
+         	['nombre' => 'Administrador'],
+    		['nombre' => 'Secretaria'],
+    		['nombre' => 'Auxiliar'],
         ]);
     }
 }
