@@ -34,9 +34,6 @@
 		    <a class="nav-link @yield('aCreateUsu')" href="{{Route('usuario.create')}}">Crear Usuario</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link @yield('aEditUsu')" href="{{url('editUsu')}}">Editar Usuario</a>
-		  </li>
-		  <li class="nav-item">
 		    <a class="nav-link @yield('aUsu')" href="{{Route('usuario.index')}}">Listar Usuarios</a>
 		  </li>
 	    </ul>
@@ -72,6 +69,7 @@
 	</div>
 	
 <script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/bootbox.min.js')}}"></script>
 <script src="{{asset('js/funciones.js')}}"></script>
 </body>
 </html>

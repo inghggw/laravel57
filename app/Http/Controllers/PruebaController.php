@@ -11,15 +11,15 @@ class PruebaController extends Controller{
 	}
 
 	public function create(){
-		return view('usuario.createUsuario');
+		return view('prueba');
 	}
 
 	public function edit(){
-		return view('usuario.editUsuario');
+		return view('prueba');
 	}
 
 	public function show(){
-		return view('usuario.usuario');
+		return view('prueba');
 	}
 
 	static function usuarios(){
