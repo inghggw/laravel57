@@ -1,3 +1,11 @@
+//Documento esté cargado totalmente
+$(function(){
+
+	//Aplicar a la tabla, la libreria
+	$('#tUsuarios').DataTable();
+	
+});
+
 function deleteFila(id){
 	//console.log(id);
 	//console.log(window.laravel.url);
@@ -27,6 +35,7 @@ function deleteFila(id){
 				.done(function(res) {
 					console.log(res);//Ver en la consola lo que devuelve el metodo del controller consultado∫
 					console.log("Ajax ok.");
+					
 					//Si el status es TRUE, elimina la fila
 					if(res.status){
 						$('#fila'+res.id).remove();	

@@ -151,6 +151,7 @@ return [
          * Package Service Providers...
          */
         Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
         /*
          * Application Service Providers...

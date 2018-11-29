@@ -4,6 +4,7 @@
 	<meta name="csrf-token" content="{{csrf_token()}}">
 	<title>Laravel - @yield('titulo')</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/jquery.dataTables.min.css')}}">
 	<script>
 	window.laravel = {!! 
 					json_encode(['url'=>URL::to('/'),
@@ -70,6 +71,7 @@
 	
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/bootbox.min.js')}}"></script>
+<script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('js/funciones.js')}}"></script>
 </body>
 </html>

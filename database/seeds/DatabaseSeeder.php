@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RolTableSeeder::class);
         $this->call(ItemTableSeeder::class);
         $this->call(ItemRolTableSeeder::class);
+        factory('App\Models\Usuario', 10000)->create();
     }
 }

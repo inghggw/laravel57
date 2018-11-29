@@ -4,7 +4,7 @@
 
 @section('contenido')
 <h3 class="text-primary">Listar Usuarios</h3>
-<table class="table table-striped">
+<table class="table table-striped" id="tUsuarios">
   <thead>
     <tr>
       <th scope="col">Editar</th>
