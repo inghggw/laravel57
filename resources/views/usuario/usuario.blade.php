@@ -4,7 +4,7 @@
 
 @section('contenido')
 <h3 class="text-primary">Listar Usuarios</h3>
-<table class="table table-striped" id="tUsuarios">
+<table class="table table-striped" id="tUsuarios" data-route="{{Route('usuario.showTable')}}">
   <thead>
     <tr>
       <th scope="col">Editar</th>
@@ -18,25 +18,25 @@
       <th scope="col">Estado</th>
     </tr>
   </thead>
-  <tbody>
-  	@foreach($usuarios as $row)
-  		<tr id="fila{{$row->id}}">
+  <!--<tbody>
+  	@--foreach($usuarios as $row)
+  		<tr id="fila{{--$row->id--}}">
   			<td>
-  				<a href="{{Route('usuario.edit',$row->id)}}">
-  				<img src="{{asset('svg/edit.svg')}}" class="h-25"></a>
-          <img src="{{asset('svg/delete.svg')}}" class="h-75 remove" 
-                onclick="deleteFila({{$row->id}})" style="cursor:pointer;">
+  				<a href="{{--Route('usuario.edit',$row->id)--}}">
+  				<img src="{{--asset('svg/edit.svg')--}}" class="h-25"></a>
+          <img src="{{--asset('svg/delete.svg')--}}" class="h-75 remove" 
+                onclick="deleteFila({{--$row->id--}})" style="cursor:pointer;">
   			</td>
-  			<td>{{$loop->iteration}}</td>
-  			<td>{{$row->primer_nombre}}</td>
-  			<td>{{$row->segundo_nombre}}</td>
-        <td>{{$row->primer_nombre}}</td>
-        <td>{{$row->segundo_nombre}}</td>
-        <td>{{$row->correo}}</td>
-        <td>{{$row->fecha_nacimiento}}</td>
-        <td>{{$row->estado->nombre}}</td>
+  			<td>{{--$loop->iteration--}}</td>
+  			<td>{{--$row->primer_nombre--}}</td>
+  			<td>{{--$row->segundo_nombre--}}</td>
+        <td>{{--$row->primer_nombre--}}</td>
+        <td>{{--$row->segundo_nombre--}}</td>
+        <td>{{--$row->correo--}}</td>
+        <td>{{--$row->fecha_nacimiento--}}</td>
+        <td>{{--$row->estado->nombre--}}</td>
   		</tr>
-  	@endforeach
-  </tbody>
+  	@--endforeach
+  </tbody>-->
 </table>
 @endsection

@@ -29,6 +29,8 @@ Route::get('usu','PruebaController@show');*/
 Route::get('inicio','PruebaController@index');
 
 Route::resource('usuario','UsuarioController');
+//Consulta Ajax DataTable
+Route::post('usuario/showTable','UsuarioController@showTable')->name('usuario.showTable');
 
 Auth::routes();
 

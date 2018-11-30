@@ -7,6 +7,7 @@ use Illuminate\Http\Request;//Clase para recibir variables por POST
 use App\Models\Usuario;//Modelo Usuario
 use App\Models\Estado AS E;//Modelo Estado
 use Illuminate\Support\Facades\Log;//Clase para realizar el log
+//use Yajra\DataTables\DataTables;//Clase DataTables
 
 class UsuarioController extends Controller
 {
@@ -27,6 +28,14 @@ class UsuarioController extends Controller
         
         //Cargar la vista y enviarle los registros de Usuario
         return view('usuario.usuario',['usuarios'=>$u]);
+    }
+
+    public function showTable(){
+        //Enviando todos los datos, sin relaciones
+        //return DataTables::of(Usuario::query())->make(true);
+
+        //Enviado los datos con relacion
+        return datatables()->eloquent(Usuario::query()->with('estado'))->toJson();
     }
 
     /**
