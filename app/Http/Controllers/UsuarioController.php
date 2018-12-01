@@ -8,6 +8,7 @@ use App\Models\Usuario;//Modelo Usuario
 use App\Models\Estado AS E;//Modelo Estado
 use Illuminate\Support\Facades\Log;//Clase para realizar el log
 //use Yajra\DataTables\DataTables;//Clase DataTables
+use App\Http\Requests\UsuarioRequest;
 
 class UsuarioController extends Controller
 {
@@ -58,22 +59,34 @@ class UsuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
         //Probar que los campos fueron enviados en su totolidad, se verifica en el archivo /storage/logs/laravel.log
         //Log::debug($request);
+
+        //Validation desde el controller
+        /*$valida = $request->validate([
+            'primerNombre'=> 'required|string|max:100|min:2',
+            'segundo_nombre'=> 'string|max:100|min:2',
+            'primerApellido'=> 'required|string|max:100|min:2',
+            'segundo_apellido'=> 'string|max:100|min:2',
+            'correElectrónico'=> 'required|email|unique:usuario,correo',
+            'contraseña'=> 'required|min:8|max:20',
+            'fechaDeNacimiento'=> 'date_format:"YYYY-MM-DD"',
+            'estado'=> 'required',
+        ]);*/
 
         //Instanciar el Modelo
         $u = new Usuario;
         
         //Setear las propiedades al obj $u con los valores que llegan por $request
-        $u->primer_nombre = $request->primernombre;
-        $u->segundo_nombre = $request->segundonombre;
-        $u->primer_apellido = $request->primerapellido;
-        $u->segundo_apellido = $request->segundoapellido;
-        $u->correo = $request->correo;
-        $u->password = bcrypt($request->contrasena);
-        $u->fecha_nacimiento = $request->fecha;
+        $u->primer_nombre = $request->primerNombre;
+        $u->segundo_nombre = $request->segundo_nombre;
+        $u->primer_apellido = $request->primerApellido;
+        $u->segundo_apellido = $request->segundo_apellido;
+        $u->correo = $request->correElectrónico;
+        $u->password = bcrypt($request->contraseña);
+        $u->fecha_nacimiento = $request->fechaDeNacimiento;
         $u->estado_id = $request->estado;
         
         //Guardar el registro en la BD
