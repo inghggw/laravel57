@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;//Agregar
+use Illuminate\Contracts\Auth\MustVerifyEmail;//Agregar
+use Illuminate\Foundation\Auth\User as Authenticatable;//Agregar
 
 /**
  * @property integer $id
@@ -19,8 +21,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property Estado $estado
  * @property RolUsuario[] $rolUsuarios
  */
-class Usuario extends Model
+class Usuario extends Authenticatable //Agregar
 {
+    use Notifiable;//Agregar
+
     /**
      * The table associated with the model.
      * 
@@ -40,6 +44,15 @@ class Usuario extends Model
      */
     protected $fillable = ['estado_id', 'primer_nombre', 'segundo_nombre', 'primer_apellido', 'segundo_apellido', 'correo', 'password', 'fecha_nacimiento', 'created_at', 'updated_at'];
 
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

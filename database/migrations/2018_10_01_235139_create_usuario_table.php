@@ -23,6 +23,8 @@ class CreateUsuarioTable extends Migration
             $table->text('password');
             $table->date('fecha_nacimiento')->nullable();
             $table->unsignedTinyInteger('estado_id');
+            $table->rememberToken();//Agregar
+            $table->timestamp('email_verified_at')->nullable();//Agregar
             $table->timestamps();
 
             $table->foreign('estado_id')->references('id')->on('estado');

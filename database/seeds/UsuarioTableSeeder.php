@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioTableSeeder extends Seeder
 {
@@ -23,11 +24,11 @@ class UsuarioTableSeeder extends Seeder
          	'primer_apellido'=>$row->primer_apellido,
          	'segundo_apellido'=>$row->segundo_apellido,
          	'correo'=>$row->correo,
-         	'password'=>$row->password,
+         	'password'=>Hash::make($row->password),
          	'fecha_nacimiento'=>$row->fecha_nacimiento,
          	'estado_id'=>$row->estado_id
         ]);
 
         }
-            }
+    }
 }
